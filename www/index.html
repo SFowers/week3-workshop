@@ -3,11 +3,29 @@
     <head>
         <meta charset="utf8" />
         <title>My Website</title>
+        <script src="https://code.jquery.com/jquery-3.7.0.js" 
+                integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" 
+                crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
-        <form action="/" enctype="multipart/form-data" method="post">
-            <input type="file" name="upload" multiple>
-            <input type="submit" value="Upload">
-        </form>
+        <div class="content">
+            <h1>Workshop 3</h1>
+        </div>
+        <div class="content">
+            <form id="loginform">
+                <label for="email">Email Address</label>
+                <input type="text" name="email" id="email" />
+                <label for="password">Password</label>
+                <input type="password" name="upwd" id="upwd" />
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="content">
+            <div id="errormsg" class="hiddenmessage"></div>
+            <div id="postResultDiv"></div>
+        </div>
     </body>
 </html>
