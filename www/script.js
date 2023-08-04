@@ -2,6 +2,7 @@ $( document ).ready(function() {
     console.log("ready!");
     $("#loginform").submit(function(event){
         event.preventDefault();
+        
         ajaxPost();
     });
 
@@ -10,6 +11,7 @@ $( document ).ready(function() {
             email: $("#email").val(),
             password: $("#upwd").val()
         }
+        console.log("hello");
         $.ajax({
             type : "POST",
             contentType : "application/json",
@@ -27,6 +29,7 @@ $( document ).ready(function() {
                 $('#postResultDiv').html("<p>" + "Post Successfull! <br>" + "Email Address: " + 
                                     customer.email + "<br>" + "Password: " + customer.upwd +
                                     "<br>" + "Valid User: " + customer.valid + "</p>");
+                window.location.href="account.html";
             },
             error : function(e) {
                 alert("Error!");

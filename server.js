@@ -1,11 +1,10 @@
 var express = require('express');
-var formidable = require('formidable');
+//var formidable = require('formidable');
 var app = express();
 var http = require('http').Server(app);
-var bodyparser = require('body-parser');
-const bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+
+app.use(express.json());
 app.use(express.static(__dirname + '/www'));
 
 let server = http.listen(3000, function () {
@@ -31,7 +30,7 @@ app.post('/api/login', function(req, res) {
     if(!req.body) {
         return res.sendStatus(400);
     }
-
+    console.log(req.body);
     var customer = {};
     customer.email = req.body.email;
     customer.upwd = req.body.upwd;
